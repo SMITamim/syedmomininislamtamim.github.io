@@ -64,3 +64,83 @@ footer p {
     margin: 0;
     padding: 10px 0;
 }
+
+.hire-me-button {
+    background-color: #f83a3a;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.hire-me-button:hover {
+    background-color: #f10905;
+    box-shadow: none;
+}
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(214, 69, 66, 0.8), 0 0 20px rgba(214, 69, 66, 0.8), 0 0 30px rgba(214, 69, 66, 0.8);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(214, 69, 66, 0.8), 0 0 30px rgba(214, 69, 66, 0.8), 0 0 40px rgba(214, 69, 66, 0.8);
+    }
+}
+
+.hire-me-button {
+    /* ... (previous styles) */
+    animation: glow 2s infinite;
+}
+
+.hire-me-button:hover {
+    /* ... (previous styles) */
+    animation: none; /* Remove the animation on hover */
+}
+
+
+
+ul.custom-navbar-nav li.nav-item a.nav-link:hover {
+    color: #d64542 !important; /* Add !important */
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-to-top-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #d64542; /* Bright red color by default */
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(255, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.scroll-to-top-button:hover {
+    background-color: #ff4848; /* Dark color on hover */
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(251, 63, 63, 0.2); /* Increased shadow on hover */
+}
+
+.scroll-to-top-button i {
+    font-size: 20px;
+}
+
+

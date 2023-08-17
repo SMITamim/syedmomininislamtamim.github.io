@@ -19,6 +19,11 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.11.3/datatables.min.css"/>
     <script src="https://kit.fontawesome.com/d4fd55d14f.js" crossorigin="anonymous"></script>
     <link href="./style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+
 
 </head>
 
@@ -34,7 +39,7 @@
                       <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav custom-navbar-nav">
                           <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#work-experience">Work Exprience</a>
+                            <a class="nav-link text-white" href="#work-experience">Work Exprience</a>
                           </li>
                           <li class="nav-item">
                             <a class="nav-link text-white" href="#publication">Publications & Research Interests</a>
@@ -48,9 +53,7 @@
                           <li class="nav-item">
                             <a class="nav-link text-white" href="#contact">Contact</a>
                           </li>
-                          <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Download CV</a>
-                          </li>
+                        
                         </ul>
                 </div>
             </nav>
@@ -66,11 +69,12 @@
                     <div class="col-md-7 text-white" style="margin-top: 10%;">
                         <div id="completed-lines"></div>
                         <h4 id="animated-text"></h4>
+                        <a href="https://www.linkedin.com/in/smitamim/" target="_blank" class="hire-me-button" id="hire-me-btn" hidden>Hire Me</a>
                     </div>    
                 </div>
             </div>
     
-            <div class="container" id="work-experience">
+            <div class="container" id="work-experience" data-aos="fade-up" data-aos-duration="800">
                 <div class="row">
                     <div class="col-md-7 text-white" style="margin-top: 10%;">
                         <h2>Work Experience</h2>
@@ -185,14 +189,33 @@
                 <div class="text-white" style="margin-top: 10%;">
                     <h2>Contact Me</h2>
                     <div>
-                        <p>
-                            Phone: 01979885688   
-                        </p>
-                        <p>Email: syedmomininislamtamim222000@gmail.com</p>
-                        <p>Linkdin:<a href="https://www.linkedin.com/in/smitamim/" target="_blank">https://www.linkedin.com/in/smitamim/</a></p>
+                        <div>
+                            <a href="https://www.facebook.com/tamim.islam.568632/" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-facebook-square"></i> Follow me on Facebook
+                            </a>
+                            <br>
+                            <a href="https://www.linkedin.com/in/smitamim/" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i> Connect with me on LinkedIn
+                            </a>
+                            <br>
+                            <a href="https://www.instagram.com/your-instagram-username/" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-instagram"></i> Follow me on Instagram
+                            </a>
+                            <br>
+                            <a href="https://github.com/SMITamim" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> Check out my GitHub
+                            </a>
+                        </div>
+                    
                     </div>
                 </div>
             </div>
+            <div class="scroll-to-top" id="scrollToTop">
+                <a href="#top" class="scroll-to-top-button">
+                    <i class="fas fa-arrow-up"></i>
+                </a>
+            </div>            
+            
         </main>
     </div>
 </body>
@@ -206,10 +229,13 @@
 </html>
 
 <script src="{{ asset('Js/script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
 <script>
+    AOS.init();
 
     const text = [
-    "I am a passionate junior software developer at Venus IT Ltd., specializing in Laravel projects and currently expanding my skills in Django.",
+    "''I am a passionate software engineer at Venus IT Ltd., specializing in Laravel projects and currently expanding my skills in Django.",
     "With a strong foundation in web development, I am constantly seeking new challenges and opportunities to enhance my expertise in the ever-evolving field of technology.",
     "Beyond my work in software development, I am also deeply fascinated by the vast possibilities of machine learning and AI.",
     "I have a keen interest in exploring research-related projects in this domain, aiming to contribute to advancements in artificial intelligence and its applications.",
@@ -217,29 +243,20 @@
     "Driven by a strong desire to learn and grow, I consistently stay updated with the latest trends and developments in both web development and machine learning.",
     "I enjoy collaborating with diverse teams, leveraging my strong communication and problem-solving skills to deliver high-quality solutions.",
     "If you're interested in discussing innovative ideas, exploring potential collaborations, or simply connecting with fellow professionals, feel free to reach out.",
-    "I am always eager to connect with like-minded individuals who share a passion for technology and its transformative impact."
+    "I am always eager to connect with like-minded individuals who share a passion for technology and its transformative impact.''"
 ];
 const completedLines = document.getElementById("completed-lines");
 const animatedText = document.getElementById("animated-text");
 let currentLine = 0;
 let currentCharacter = 0;
 
-function animateText() {
-    if (currentLine < text.length) {
-        animatedText.innerHTML = text[currentLine].substring(0, currentCharacter);
-        currentCharacter++;
-        if (currentCharacter > text[currentLine].length) {
-            currentLine++;
-            currentCharacter = 0;
-            setTimeout(animateText, 1000); // Delay before moving to the next line
-        } else {
-            setTimeout(animateText, 50); // Delay between each character
-        }
-    }
-}
+
 
 
 function animateText() {
+    
+
+
     if (currentLine < text.length) {
         const currentLineText = text[currentLine];
         
@@ -253,6 +270,12 @@ function animateText() {
         }
         
         setTimeout(animateText, 15); // Adjust the delay between characters
+    }
+
+    else {
+        // Animation is done, show the "Hire Me" button
+        const hireMeButton = document.getElementById("hire-me-btn");
+        hireMeButton.removeAttribute("hidden");
     }
 }
 
@@ -320,4 +343,19 @@ animateText();
 
 // Call the function to fetch and display GitHub projects
 fetchGitHubProjects();
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopButton = document.getElementById("scrollToTop");
+
+    // Show or hide the scroll-to-top button based on scroll position
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 0) {
+            scrollToTopButton.classList.add("show");
+        } else {
+            scrollToTopButton.classList.remove("show");
+        }
+    });
+});
+
+
 </script>
