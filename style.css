@@ -1,0 +1,66 @@
+.MainBody{
+    min-height: 700px;
+}
+
+body {
+    background: linear-gradient(to bottom, black, #202020);
+    margin: 0;
+    padding: 0;
+    
+}
+
+.navbar{
+    
+    background: linear-gradient(to left, black, #202020);
+}
+
+
+.custom-navbar-nav {
+    margin-left: auto; /* Push the ul to the right */
+}
+
+.myPicture{
+    background-color: transparent;
+}
+.officeLogo01{
+    background-color: transparent;
+}
+
+#animated-text {
+    white-space: pre-wrap;
+}
+.work-experience-section {
+    margin-top: 20px;
+}
+
+.work-list {
+    list-style: none;
+    padding: 0;
+}
+
+.work-list li {
+    margin-bottom: 20px;
+}
+
+.work-list h3 {
+    margin: 0;
+}
+
+.work-duration {
+    color: #888;
+    margin-top: 5px;
+}
+/* Add this to your existing style.css file or in a new <style> tag in your HTML */
+
+/* Style for the footer */
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #333; /* You can choose your preferred background color */
+}
+
+/* Style for the text in the footer */
+footer p {
+    margin: 0;
+    padding: 10px 0;
+}
