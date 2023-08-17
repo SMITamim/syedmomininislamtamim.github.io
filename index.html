@@ -261,7 +261,7 @@ animateText();
     // Function to fetch and display GitHub projects
     async function fetchGitHubProjects() {
         const username = 'SMITamim';
-        const accessToken = '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';
+        const accessToken = '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';
 
         try {
             const response = await fetch(`https://api.github.com/users/${username}/repos`, {
@@ -275,6 +275,8 @@ animateText();
         
         let currentRow = document.createElement('div');
         currentRow.classList.add('row');
+
+        
 
         // Loop through projects and create project cards
         projects.forEach((project, index) => {
